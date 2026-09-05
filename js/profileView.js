@@ -1,22 +1,22 @@
 export function renderProfile(userData, container) {
   container.innerHTML = `
     <div class="profile-card">
-      <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}"
+      <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}">
       <div class="profile-info">
-        <h2>${userData.name}</h2>
+        <h2>${userData.name || 'Sem nome'}</h2>
         <p>${userData.bio || 'Não possui bio cadastrada 😢.'}</p>
       </div>
     </div>
 
      <div class="profile-counters">
-            <duv class="followers">
+            <div class="counters">
                 <h4>👥 Seguidores</h4>
                 <span>${userData.followers}</span>
             </div>
-            <div class="following">
+            <div class="counters">
                 <h4>👥 Seguindo</h4>
                 <span>${userData.following}</span>
             </div>
-     </div<
+     </div>
   `;
 }
