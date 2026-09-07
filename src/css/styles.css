@@ -148,37 +148,33 @@ main {
 .profile-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
 }
 
-.profile-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
+.profile-card img, 
 .profile-avatar {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: flex-start;
+  text-align: left;
+  gap: 0.5rem;
 }
 
 .profile-info h2 {
   font-size: var(--font-xl);
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-align: left;
 }
 
 .profile-info p {
@@ -209,4 +205,77 @@ main {
 .profile-counters span {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.profile-repositories {
+  margin: 2rem auto 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.profile-repositories h2 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.repositories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.repositories > a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.repository-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: #ffffff;
+  height: 100%;
+}
+
+.repository-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.repository-card h3 {
+  font-size: var(--font-md);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  text-align: left;
+  word-break: break-all;
+}
+
+.repository-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.repository-stats span {
+  font-size: var(--font-sm);
+  color: var(--muted-foreground);
+  background: #ececec;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  display: block;
 }
